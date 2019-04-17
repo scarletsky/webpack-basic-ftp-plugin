@@ -1,0 +1,14 @@
+{
+  "name": "webpack-basic-ftp-plugin",
+  "version": "0.1.0",
+  "description": "basic-ftp for webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "scarletsky <scarletsky1025@gmail.com> (https://github.com/scarletsky)",
+  "license": "ISC",
+  "dependencies": {
+    "basic-ftp": "^3.4.4"
+  }
+}
