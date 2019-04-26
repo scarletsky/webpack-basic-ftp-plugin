@@ -23,8 +23,10 @@ function WebpackBasicFtpPlugin(options) {
 WebpackBasicFtpPlugin.prototype.apply = function (compiler) {
     compiler.hooks.done.tapPromise('WebpackBasicFtpPlugin', (_stats) => {
         return new Promise(async (resolve, reject) => {
+            let connected = false;
+            const client = new ftp.Client();
+
             try {
-                const client = new ftp.Client();
                 console.log(id, 'trying to access ftp server.');
                 await client.access({
                     host: this.host,
@@ -32,6 +34,7 @@ WebpackBasicFtpPlugin.prototype.apply = function (compiler) {
                     password: this.password,
                     secure: this.secure
                 });
+                connected = true;
                 console.log(id, 'login success.');
                 console.log(id, 'ensure remote dir ', this.remoteDir);
                 await client.ensureDir(this.remoteDir);
@@ -48,6 +51,9 @@ WebpackBasicFtpPlugin.prototype.apply = function (compiler) {
                 client.close();
                 resolve();
             } catch (error) {
+                if (connected) {
+                    client.close();
+                }
                 reject(error);
             }
         });
