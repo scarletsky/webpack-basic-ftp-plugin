@@ -9,6 +9,6 @@
   "author": "scarletsky <scarletsky1025@gmail.com> (https://github.com/scarletsky)",
   "license": "ISC",
   "dependencies": {
-    "basic-ftp": "^3.4.4"
+    "basic-ftp": "^4.5.4"
   }
 }

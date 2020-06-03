@@ -45,7 +45,7 @@ WebpackBasicFtpPlugin.prototype.apply = function (compiler) {
                 }
 
                 console.log(id, 'upload dir from ', this.localDir);
-                await client.uploadDir(this.localDir);
+                await client.uploadFromDir(this.localDir);
                 console.log(id, 'upload success.');
 
                 client.close();
