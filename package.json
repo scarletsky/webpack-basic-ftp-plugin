@@ -1,6 +1,6 @@
 {
   "name": "webpack-basic-ftp-plugin",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "basic-ftp for webpack",
   "main": "index.js",
   "scripts": {
